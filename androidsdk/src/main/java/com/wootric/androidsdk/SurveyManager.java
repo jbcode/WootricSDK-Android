@@ -25,8 +25,8 @@ package com.wootric.androidsdk;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.os.Handler;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
+import android.app.Activity;
+import android.app.FragmentManager;
 import android.util.Log;
 
 import com.wootric.androidsdk.network.WootricApiCallback;
@@ -42,7 +42,7 @@ import com.wootric.androidsdk.views.SurveyFragment;
  */
 public class SurveyManager implements SurveyValidator.OnSurveyValidatedListener, WootricApiCallback {
 
-    private final FragmentActivity activity;
+    private final Activity activity;
     private final WootricRemoteClient wootricApiClient;
     private final User user;
     private final EndUser endUser;
@@ -55,7 +55,7 @@ public class SurveyManager implements SurveyValidator.OnSurveyValidatedListener,
 
     private static final String SURVEY_DIALOG_TAG = "survey_dialog_tag";
 
-    SurveyManager(FragmentActivity activity, WootricRemoteClient wootricApiClient, User user, EndUser endUser,
+    SurveyManager(Activity activity, WootricRemoteClient wootricApiClient, User user, EndUser endUser,
                   Settings settings, PreferencesUtils preferencesUtils,
                   SurveyValidator surveyValidator) {
 
@@ -175,7 +175,7 @@ public class SurveyManager implements SurveyValidator.OnSurveyValidatedListener,
 
     private void showSurveyFragment() {
         try {
-            final FragmentManager fragmentManager = activity.getSupportFragmentManager();
+            final FragmentManager fragmentManager = activity.getFragmentManager();
 
             SurveyFragment surveyFragment = SurveyFragment.newInstance(endUser, getOriginUrl(),
                     accessToken, settings, user);

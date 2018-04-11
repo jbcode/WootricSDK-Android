@@ -3,7 +3,7 @@ package com.wootric.androidsdk;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.support.v4.app.FragmentActivity;
+import android.app.Activity;
 import android.test.mock.MockPackageManager;
 
 import com.wootric.androidsdk.objects.EndUser;

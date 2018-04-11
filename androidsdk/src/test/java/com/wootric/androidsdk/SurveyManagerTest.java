@@ -1,6 +1,6 @@
 package com.wootric.androidsdk;
 
-import android.support.v4.app.FragmentActivity;
+import android.app.Activity;
 
 import com.wootric.androidsdk.network.WootricRemoteClient;
 import com.wootric.androidsdk.objects.EndUser;
